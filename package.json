@@ -1,0 +1,21 @@
+{
+  "name": "@sbp/proxy",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --port 8788",
+    "deploy": "wrangler deploy",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "fmt": "bunx oxfmt"
+  },
+  "dependencies": {
+    "hono": "^4.9.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260509.1",
+    "bun-types": "^1.3.14",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.90.0"
+  }
+}
