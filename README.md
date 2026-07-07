@@ -4,6 +4,9 @@ A deliberately dumb, **no-logging** CORS forward proxy on Cloudflare Workers.
 It is the hosted default relay for [save brain power](https://sbp.gvclima.workers.dev),
 and it is designed to be equally easy to run yourself.
 
+This directory is the source for the standalone `savebrainpower/proxy`
+repository.
+
 ## Why this exists
 
 save brain power is zero-knowledge: the app's servers only ever store
@@ -59,16 +62,52 @@ bun install            # or npm install
 bunx wrangler deploy   # after: remove/adjust `routes` in wrangler.toml
 ```
 
-Configuration lives in `wrangler.toml`:
+Configuration lives in `wrangler.toml` for local use.
+If you are using the standalone `savebrainpower/proxy` repository, start from
+`wrangler.example.toml` and copy it into place:
 
-- `ALLOWED_ORIGINS` — comma-separated browser origins allowed to call the
-  proxy, or `*` for a personal deployment.
+```sh
+cp wrangler.example.toml wrangler.toml
+```
+
+Then edit the copied file:
+
 - `[[unsafe.bindings]] … simple = { limit, period }` — the per-IP rate limit.
-- `routes` — replace with your own domain, or delete it to use the
-  `*.workers.dev` URL wrangler gives you. Paste that URL into
-  **Settings → Proxy** in the app.
 
-Local development: `bun run dev` (serves on `http://localhost:8788`).
+## Run it locally
+
+Requirements:
+
+- [Bun](https://bun.sh)
+- A Cloudflare account if you want to run `wrangler dev` against the worker
+
+Install dependencies:
+
+```sh
+bun install
+```
+
+Run the worker locally:
+
+```sh
+bun run dev
+```
+
+Then configure `http://localhost:8788` on https://app.savebrainpower.xyz/settings?tab=proxy
+
+Other useful commands:
+
+```sh
+bun run test
+bun run typecheck
+bun run fmt
+```
+
+If you want to deploy to a Cloudflare worker of your own:
+
+```sh
+bun run deploy
+```
 
 ## License
 

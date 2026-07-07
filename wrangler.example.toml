@@ -1,0 +1,15 @@
+name = "sbp-proxy"
+main = "src/index.ts"
+compatibility_date = "2025-09-24"
+
+[observability]
+enabled = false
+
+[vars]
+ALLOWED_ORIGINS = "https://app.savebrainpower.xyz"
+
+[[unsafe.bindings]]
+name = "RATE_LIMITER"
+type = "ratelimit"
+namespace_id = "REPLACE_WITH_YOUR_NAMESPACE_ID"
+simple = { limit = 100, period = 60 }
