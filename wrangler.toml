@@ -15,7 +15,7 @@ enabled = false
 # it to any site — fine for a personal self-hosted proxy, not for the hosted
 # default. curl-style clients are unaffected either way; that exposure is
 # bounded by the per-IP rate limit below.
-ALLOWED_ORIGINS = "https://sbp.gvclima.workers.dev,http://localhost:3000"
+ALLOWED_ORIGINS = "https://app.savebrainpower.xyz,https://staging.savebrainpower.xyz,http://localhost:3000"
 
 # Cloudflare's native rate limiter: transient per-edge counters, no storage,
 # no logs — the only kind of abuse control that fits a no-logging proxy.
