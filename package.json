@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "wrangler dev --port 8788",
+    "dev": "wrangler dev --config wrangler.local.toml --port 8788",
     "deploy": "wrangler deploy",
     "test": "bun test",
     "typecheck": "tsc --noEmit",
