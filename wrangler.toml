@@ -1,5 +1,5 @@
 name = "sbp-proxy"
-main = "src/index.ts"
+main = "src/proxy.ts"
 compatibility_date = "2025-09-24"
 
 routes = [{ pattern = "proxy.savebrainpower.xyz", custom_domain = true }]
