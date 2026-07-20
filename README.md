@@ -1,7 +1,7 @@
 # sbp-proxy
 
 A deliberately dumb, **no-logging** CORS forward proxy on Cloudflare Workers.
-It is the hosted default relay for [save brain power](https://sbp.gvclima.workers.dev),
+It is the hosted default relay for [save brain power](https://savebrainpower.xyz),
 and it is designed to be equally easy to run yourself.
 
 This directory is the source for the standalone `savebrainpower/proxy`
